@@ -2,12 +2,12 @@ from collections import defaultdict
 
 
 vec = {
-  'e': [1, 0],
-  'se': [0.5, 0.5],
-  'sw': [-0.5, 0.5],
-  'w': [-1, 0],
-  'nw': [-0.5, -0.5],
-  'ne': [0.5, -0.5]
+  'e': [2, 0],
+  'se': [1, -1],
+  'sw': [-1, -1],
+  'w': [-2, 0],
+  'nw': [-1, 1],
+  'ne': [1, 1]
 }
 
 
@@ -66,6 +66,24 @@ def solve2(lines):
 
 def get_n(x, y):
   return {(x + v[0], y + v[1]) for v in vec.values()}
+
+
+def plot(blacks):
+  import matplotlib.pyplot as plt
+  from math import sqrt
+
+  Y_MUL = sqrt(3.0)
+
+  assert len(blacks) == len(set(blacks))
+  x = [v[0] for v in blacks]
+  y = [v[1] for v in blacks]
+
+  numx = abs(max(x) - min(x))/2 + 1
+  numy = abs(max(y) - min(y)) + 1
+  y = list(map(lambda a: Y_MUL * a, y))
+
+  plt.hexbin(x, y, edgecolors='black', gridsize=(numx, numy))
+  plt.show()
 
 
 solve()
