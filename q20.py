@@ -13,7 +13,7 @@ VER = 2
 
 
 def solve():
-  with open('input/in.txt', 'r') as f:
+  with open('input/q20.txt', 'r') as f:
     lines = [line[:-1] for line in f.readlines()]
 
   print('Answer 1:', solve1(lines[:]))

@@ -5,7 +5,7 @@ vecs = [
 ]
 
 def solve():
-  with open('input/in.txt', 'r') as f:
+  with open('input/q11.txt', 'r') as f:
     lines = [line[:-1] for line in f.readlines()]
 
   lines = list(map(list, lines))

@@ -1,5 +1,5 @@
 def solve():
-  with open('input/in.txt', 'r') as f:
+  with open('input/q4.txt', 'r') as f:
     lines = list(map(lambda s: s[:-1], f.readlines()))
 
   print('Answer 1:', solve1(lines[:]))
